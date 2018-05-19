@@ -1,7 +1,7 @@
 import React from 'react';
-import Provider from './components/Provider/index';
+import Store from './components/Store/index';
 
 let App = () =>
-  <Provider />
+  <Store />
 
 export default App;
