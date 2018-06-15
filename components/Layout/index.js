@@ -1,11 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import BottomNav from '../BottomNav/index';
 
 let Layout = () =>
-  <View>
-    <Text>Open up App.js to start working on your app!</Text>
-    <Text>Changes you make will automatically reload.</Text>
-    <Text>Shake your phone to open the developer menu.</Text>
-  </View>
+  <BottomNav />
 
 export default Layout;
