@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeStack from '../stacks/Home/index';
-import DiscoverStack from '../stacks/Discover/index';
-import DreamStack from '../stacks/Dream/index';
-import PlanStack from '../stacks/Plan/index';
+import HomeStack from '../../stacks/Home/index';
+import DiscoverStack from '../../stacks/Discover/index';
+import DreamStack from '../../stacks/Dream/index';
+import PlanStack from '../../stacks/Plan/index';
 
 let getIcon = (navigation, focused) => {
   let lib = {
@@ -37,7 +37,7 @@ let getIcon = (navigation, focused) => {
   return `${prefix}${infix}${suffix}`;
 };
 
-let BottomNav = createBottomTabNavigator(
+let BottomTabNavigator = createBottomTabNavigator(
   {
     Home: HomeStack,
     Discover: DiscoverStack,
@@ -52,4 +52,4 @@ let BottomNav = createBottomTabNavigator(
   }
 );
 
-export default BottomNav;
+export default BottomTabNavigator;
