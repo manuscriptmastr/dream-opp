@@ -4,6 +4,11 @@ import DiscoverScreen from '../../screens/Discover/index';
 let DiscoverStack = createStackNavigator(
   {
     Discover: DiscoverScreen
+  },
+  {
+    navigationOptions: () => ({
+      title: 'Discover'
+    })
   }
 );
 

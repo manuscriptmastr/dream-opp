@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-let DreamScreen = () =>
+let TeamsScreen = () =>
   <View>
     <Text>
-      Dream
+      Teams
     </Text>
   </View>
 
-export default DreamScreen;
+export default TeamsScreen;

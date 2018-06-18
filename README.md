@@ -7,7 +7,7 @@
 Identify your ideal opportunity by subscribing to
 - Roles
 - Tools
-- Companies
+- Teams
 
 ## Discover and Curate
 
