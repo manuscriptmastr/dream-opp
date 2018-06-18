@@ -1,7 +1,7 @@
 import React from 'react';
 import BottomNav from '../BottomNav/index';
 
-let Layout = () =>
+let Navigator = () =>
   <BottomNav />
 
-export default Layout;
+export default Navigator;
