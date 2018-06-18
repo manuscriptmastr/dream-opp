@@ -4,6 +4,11 @@ import PlanScreen from '../../screens/Plan/index';
 let PlanStack = createStackNavigator(
   {
     Plan: PlanScreen
+  },
+  {
+    navigationOptions: () => ({
+      title: 'Plan'
+    })
   }
 );
 

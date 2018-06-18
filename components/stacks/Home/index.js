@@ -4,6 +4,11 @@ import HomeScreen from '../../screens/Home/index';
 let HomeStack = createStackNavigator(
   {
     Home: HomeScreen
+  },
+  {
+    navigationOptions: () => ({
+      title: 'Home'
+    })
   }
 );
 
