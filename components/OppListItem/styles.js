@@ -9,9 +9,16 @@ let styles = StyleSheet.create({
     padding: 10,
     borderRadius: 2,
   },
+  oppHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10
+  },
   oppTitle: {
     fontWeight: "700",
-    fontSize: 16
+    fontSize: 16,
+    flex: 1,
+    marginLeft: 10
   },
   oppAvatar: {
     width: 50,
