@@ -12,6 +12,10 @@ let styles = StyleSheet.create({
   oppTitle: {
     fontWeight: "700",
     fontSize: 16
+  },
+  oppAvatar: {
+    width: 50,
+    height: 50
   }
 });
 
