@@ -6,7 +6,8 @@ let styles = StyleSheet.create({
   },
   opp: {
     backgroundColor: 'white',
-    padding: 5
+    padding: 10,
+    borderRadius: 2,
   },
   oppTitle: {
     fontWeight: "700",

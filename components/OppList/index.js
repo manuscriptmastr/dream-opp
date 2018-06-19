@@ -1,16 +1,13 @@
 import React from 'react';
 import styles from './styles';
-import { FlatList } from 'react-native';
-import { withKeyProps } from '../../lib/helpers.js';
+import { ScrollView } from 'react-native';
 import OppListItem from '../OppListItem';
 
 let OppList = ({ opps }) =>
-  <FlatList
-    style={styles.oppList}
-    data={withKeyProps(opps)}
-    renderItem={({ item }) =>
-      <OppListItem key={item.key} opp={item} />
-    }
-  />;
+  <ScrollView style={styles.oppList} >
+    {opps.map((opp, i) =>
+      <OppListItem key={i} opp={opp} />
+    )}
+  </ScrollView>;
 
 export default OppList;
