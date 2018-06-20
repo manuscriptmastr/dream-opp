@@ -6,6 +6,7 @@ import { View, Text, Image } from 'react-native';
 import { bookmarkOpp, unbookmarkOpp } from '../../actions/opp';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+let toggleBookmark = (opp) => opp.bookmarked ? unbookmarkOpp(opp) : bookmarkOpp(opp);
 let getBookmarkColor = ({ bookmarked }) => bookmarked ? 'black' : 'lightgray';
 
 let OppCard = ({ opp, toggleBookmark }) =>
@@ -23,9 +24,9 @@ let OppCard = ({ opp, toggleBookmark }) =>
     <Text>{opp.description}</Text>
   </View>
 
-let mapDispatchToProps = (dispatch) => ({
-  toggleBookmark: (opp) => dispatch(opp.bookmarked ? unbookmarkOpp(opp) : bookmarkOpp(opp))
-});
+let mapDispatchToProps = {
+  toggleBookmark
+}
 
 let enhance = compose(
   connect(null, mapDispatchToProps)
