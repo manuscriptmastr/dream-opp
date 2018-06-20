@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
-import PlanScreen from '../../screens/Plan/index';
+import PlanScreen from '../../screens/Plan';
 
 let PlanStack = createStackNavigator(
   {

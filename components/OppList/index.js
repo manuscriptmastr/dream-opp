@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './styles';
-import { ScrollView } from 'react-native';
-import OppListItem from '../OppListItem';
+import { ScrollView, View } from 'react-native';
+import OppCard from '../OppCard';
 
 let OppList = ({ opps }) =>
   <ScrollView style={styles.oppList} >
     {opps.map((opp) =>
-      <OppListItem key={opp.id} opp={opp} />
+      <View key={opp.id} style={styles.oppListItem} >
+        <OppCard opp={opp} />
+      </View>
     )}
   </ScrollView>
 

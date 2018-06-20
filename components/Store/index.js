@@ -1,6 +1,6 @@
 import React from 'react';
-import Navigator from '../navigation/Navigator/index';
-import store from '../../store/index';
+import Navigator from '../navigation/Navigator';
+import store from '../../store';
 import { Provider } from 'react-redux';
 
 let Store = () =>

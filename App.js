@@ -1,5 +1,5 @@
 import React from 'react';
-import Store from './components/Store/index';
+import Store from './components/Store';
 
 let App = () =>
   <Store />

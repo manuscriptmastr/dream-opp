@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from 'react-navigation';
-import RolesScreen from '../../screens/Dream/Roles/index';
-import ToolsScreen from '../../screens/Dream/Tools/index';
-import TeamsScreen from '../../screens/Dream/Teams/index';
+import RolesScreen from '../../screens/Dream/Roles';
+import ToolsScreen from '../../screens/Dream/Tools';
+import TeamsScreen from '../../screens/Dream/Teams';
 
 let DreamStack = createMaterialTopTabNavigator(
   {
