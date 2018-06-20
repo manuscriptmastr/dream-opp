@@ -1,9 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 let styles = StyleSheet.create({
-  oppListItem: {
-    padding: 10
-  },
   opp: {
     backgroundColor: 'white',
     padding: 10,
