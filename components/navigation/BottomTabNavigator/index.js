@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import HomeStack from '../../stacks/Home/index';
-import DiscoverStack from '../../stacks/Discover/index';
-import DreamStack from '../../stacks/Dream/index';
-import PlanStack from '../../stacks/Plan/index';
+import HomeStack from '../../stacks/Home';
+import DiscoverStack from '../../stacks/Discover';
+import DreamStack from '../../stacks/Dream';
+import PlanStack from '../../stacks/Plan';
 
 let getIcon = (navigation, focused) => {
   let lib = {

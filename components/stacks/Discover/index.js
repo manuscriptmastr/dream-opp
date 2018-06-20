@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
-import DiscoverScreen from '../../screens/Discover/index';
+import DiscoverScreen from '../../screens/Discover';
 
 let DiscoverStack = createStackNavigator(
   {
