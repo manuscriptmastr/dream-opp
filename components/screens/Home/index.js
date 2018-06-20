@@ -1,6 +1,5 @@
 import React from 'react';
-import styles from './styles';
-import { View } from 'react-native';
+import ScreenView from '../../ScreenView/index';
 import OppList from '../../OppList/index';
 
 let testJobs = [
@@ -31,8 +30,8 @@ let testJobs = [
 ]
 
 let HomeScreen = () =>
-  <View style={styles.screen}>
+  <ScreenView>
     <OppList opps={testJobs} />  
-  </View>
+  </ScreenView>
 
 export default HomeScreen;
