@@ -9,7 +9,7 @@ let HomeScreen = ({ opps }) =>
     <OppList opps={opps} />  
   </ScreenView>
 
-let mapStateToProps = ({ opps }) => ({ opps });
+let mapStateToProps = ({ opps }) => ({ opps: opps.filter(({ bookmarked }) => bookmarked) });
 
 let enhance = compose(
   connect(mapStateToProps, null)
