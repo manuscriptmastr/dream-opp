@@ -1,5 +1,5 @@
-import initial from './initial';
+import initState from '../store/initial';
 
-let reducer = (state = initial, action) => state;
+let reducer = (state = initState, action) => state;
 
 export default reducer;

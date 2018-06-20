@@ -5,9 +5,9 @@ import OppListItem from '../OppListItem';
 
 let OppList = ({ opps }) =>
   <ScrollView style={styles.oppList} >
-    {opps.map((opp, i) =>
-      <OppListItem key={i} opp={opp} />
+    {opps.map((opp) =>
+      <OppListItem key={opp.id} opp={opp} />
     )}
-  </ScrollView>;
+  </ScrollView>
 
 export default OppList;

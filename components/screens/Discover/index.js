@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import ScreenView from '../../ScreenView/index';
+import OppList from '../../OppList/index';
 
-let DiscoverScreen = () =>
-  <View>
-    <Text>
-      Discover
-    </Text>
-  </View>
+let DiscoverScreen = ({ opps }) =>
+  <ScreenView>
+    <OppList opps={opps} />  
+  </ScreenView>
 
-export default DiscoverScreen;
+let mapStateToProps = ({ opps }) => ({ opps });
+
+let enhance = compose(
+  connect(mapStateToProps, null)
+);
+
+export default enhance(DiscoverScreen);
