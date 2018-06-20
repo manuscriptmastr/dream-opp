@@ -2,6 +2,7 @@ const initState = {
   user: 'Joshua Martin',
   opps: [
     {
+      id: 's09dnfobgi',
       role: 'Front End Developer',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur esse officiis magnam quos est beatae sed. Ipsum, nobis reiciendis.',
       team: {
@@ -10,6 +11,7 @@ const initState = {
       }
     },
     {
+      id: '320bu0doijf',
       role: 'DevOps Engineer',
       description: 'Ipsum dolor sit amet consectetur adipisicing elit. Eos aspernatur esse officiis magnam quos est beatae sed.',
       team: {
@@ -18,6 +20,7 @@ const initState = {
       }
     },
     {
+      id: 'b03fng09rci',
       role: 'Back End Developer',
       description: 'Cookie cheesecake whataburger omega fish oil cucumber burger bacon philly steak chicken corn stew.',
       team: {
