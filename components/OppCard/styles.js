@@ -7,11 +7,6 @@ let styles = StyleSheet.create({
     padding: 10,
     borderRadius: 2,
   },
-  oppBookmark: {
-    position: 'absolute',
-    top: 0,
-    right: 2
-  },
   oppHeader: {
     flexDirection: 'row',
     alignItems: 'center',
