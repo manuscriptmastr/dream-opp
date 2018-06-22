@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native';
 import OppBookmark from '../OppBookmark';
 import OppToolbar from '../OppToolbar';
 
-let OppCard = ({ opp }) =>
+let OppCard = ({ opp, children }) =>
   <View style={styles.opp} >
     <OppBookmark opp={opp} />
     <View style={styles.oppHeader}>
@@ -12,7 +12,9 @@ let OppCard = ({ opp }) =>
       <Text style={styles.oppTitle}>{opp.team.name} wants you for their next {opp.role}.</Text>
     </View>
     <Text>{opp.description}</Text>
-    <OppToolbar opp={opp} />
+    <OppToolbar opp={opp} >
+      {children}
+    </OppToolbar>
   </View>
 
 export default OppCard;
