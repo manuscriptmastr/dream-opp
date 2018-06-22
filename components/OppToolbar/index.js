@@ -4,7 +4,7 @@ import { compose, withState, withHandlers } from 'recompose';
 import { View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-let OppToolbar = ({ opp, isVisible, toggleVisibility, children }) =>
+let OppToolbar = ({ isVisible, toggleVisibility, children }) =>
   <View style={styles.oppToolbar} >
     {isVisible ? children : null}
     <Ionicons
