@@ -1,5 +1,21 @@
 const initState = {
   user: 'Joshua Martin',
+  dream: {
+    roles: [
+      {
+        id: 'df0fbreiwej',
+        title: 'Front End Web Developer'
+      },
+      {
+        id: 'cbvidjboi',
+        title: 'Software Engineer'
+      },
+      {
+        id: '409u495bdsp',
+        title: 'UX Designer'
+      }
+    ]
+  },
   opps: [
     {
       id: 's09dnfobgi',
