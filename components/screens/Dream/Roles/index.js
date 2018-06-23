@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ScreenView from '../../../ScreenView';
+import RoleList from '../../../RoleList';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
-let RolesScreen = () =>
-  <View>
-    <Text>
-      Roles
-    </Text>
-  </View>
+let RolesScreen = ({ roles }) =>
+  <ScreenView>
+    <RoleList roles={roles} />
+  </ScreenView>
 
-export default RolesScreen;
+let mapStateToProps = ({ dream: { roles } }) => ({ roles });
+
+let enhance = compose(
+  connect(mapStateToProps)
+);
+
+export default enhance(RolesScreen);
