@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ScreenView from '../../../ScreenView';
+import TeamList from '../../../TeamList';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
-let TeamsScreen = () =>
-  <View>
-    <Text>
-      Teams
-    </Text>
-  </View>
+let TeamsScreen = ({ teams }) =>
+  <ScreenView>
+    <TeamList teams={teams} />
+  </ScreenView>
 
-export default TeamsScreen;
+let mapStateToProps = ({ dream: { teams } }) => ({ teams });
+
+let enhance = compose(
+  connect(mapStateToProps)
+);
+
+export default enhance(TeamsScreen);

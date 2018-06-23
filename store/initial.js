@@ -14,6 +14,20 @@ const initState = {
         id: '409u495bdsp',
         title: 'UX Designer'
       }
+    ],
+    teams: [
+      {
+        id: 'b9erurenghs',
+        title: 'Airbnb'
+      },
+      {
+        id: 'rg0htrssg4',
+        title: 'Stitch Fix'
+      },
+      {
+        id: '40ih09we',
+        title: 'Apple'
+      }
     ]
   },
   opps: [
