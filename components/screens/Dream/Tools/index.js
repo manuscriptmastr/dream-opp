@@ -1,11 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ScreenView from '../../../ScreenView';
+import ToolList from '../../../ToolList';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
-let ToolsScreen = () =>
-  <View>
-    <Text>
-      Tools
-    </Text>
-  </View>
+let ToolsScreen = ({ tools }) =>
+  <ScreenView>
+    <ToolList tools={tools} />
+  </ScreenView>
 
-export default ToolsScreen;
+let mapStateToProps = ({ dream: { tools } }) => ({ tools });
+
+let enhance = compose(
+  connect(mapStateToProps)
+);
+
+export default enhance(ToolsScreen);
