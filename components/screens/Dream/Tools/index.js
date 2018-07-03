@@ -9,7 +9,7 @@ let ToolsScreen = ({ tools }) =>
     <ToolList tools={tools} />
   </ScreenView>
 
-let mapStateToProps = ({ dream: { tools } }) => ({ tools });
+let mapStateToProps = ({ tools }) => ({ tools });
 
 let enhance = compose(
   connect(mapStateToProps)

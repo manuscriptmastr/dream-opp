@@ -1,49 +1,47 @@
 const initState = {
   user: 'Joshua Martin',
-  dream: {
-    roles: [
-      {
-        id: 'df0fbreiwej',
-        title: 'Front End Web Developer'
-      },
-      {
-        id: 'cbvidjboi',
-        title: 'Software Engineer'
-      },
-      {
-        id: '409u495bdsp',
-        title: 'UX Designer'
-      }
-    ],
-    tools: [
-      {
-        id: '4wg09brdrh',
-        title: 'Ruby'
-      },
-      {
-        id: '0h9ur0sev',
-        title: 'JavaScript',
-      },
-      {
-        id: 'xoijfuw0h',
-        title: 'Test Driven Development'
-      }
-    ],
-    teams: [
-      {
-        id: 'b9erurenghs',
-        title: 'Airbnb'
-      },
-      {
-        id: 'rg0htrssg4',
-        title: 'Stitch Fix'
-      },
-      {
-        id: '40ih09we',
-        title: 'Apple'
-      }
-    ]
-  },
+  roles: [
+    {
+      id: 'df0fbreiwej',
+      title: 'Front End Web Developer'
+    },
+    {
+      id: 'cbvidjboi',
+      title: 'Software Engineer'
+    },
+    {
+      id: '409u495bdsp',
+      title: 'UX Designer'
+    }
+  ],
+  tools: [
+    {
+      id: '4wg09brdrh',
+      title: 'Ruby'
+    },
+    {
+      id: '0h9ur0sev',
+      title: 'JavaScript',
+    },
+    {
+      id: 'xoijfuw0h',
+      title: 'Test Driven Development'
+    }
+  ],
+  teams: [
+    {
+      id: 'b9erurenghs',
+      title: 'Airbnb'
+    },
+    {
+      id: 'rg0htrssg4',
+      title: 'Stitch Fix'
+    },
+    {
+      id: '40ih09we',
+      title: 'Apple'
+    }
+  ],
   opps: [
     {
       id: 's09dnfobgi',
