@@ -9,7 +9,7 @@ let TeamsScreen = ({ teams }) =>
     <TeamList teams={teams} />
   </ScreenView>
 
-let mapStateToProps = ({ dream: { teams } }) => ({ teams });
+let mapStateToProps = ({ teams }) => ({ teams });
 
 let enhance = compose(
   connect(mapStateToProps)

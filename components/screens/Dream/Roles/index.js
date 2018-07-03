@@ -9,7 +9,7 @@ let RolesScreen = ({ roles }) =>
     <RoleList roles={roles} />
   </ScreenView>
 
-let mapStateToProps = ({ dream: { roles } }) => ({ roles });
+let mapStateToProps = ({ roles }) => ({ roles });
 
 let enhance = compose(
   connect(mapStateToProps)
