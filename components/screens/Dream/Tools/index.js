@@ -1,18 +1,30 @@
 import React from 'react';
+import { compose, mapProps, branch, renderNothing } from 'recompose';
+import { graphql } from 'react-apollo';
+import { gql } from 'apollo-boost';
 import ScreenView from '../../../ScreenView';
 import ToolList from '../../../ToolList';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
 
 let ToolsScreen = ({ tools }) =>
   <ScreenView>
     <ToolList tools={tools} />
   </ScreenView>
 
-let mapStateToProps = ({ tools }) => ({ tools });
+let query = gql`
+query {
+  tools {
+    id
+    title
+  }
+}
+`;
+
+let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
-  connect(mapStateToProps)
+  graphql(query),
+  nothingWhileLoading(({ data: { loading } }) => loading),
+  mapProps(({ data, ...props }) => ({ ...data, ...props }))
 );
 
 export default enhance(ToolsScreen);

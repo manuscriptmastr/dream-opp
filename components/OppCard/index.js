@@ -9,7 +9,7 @@ let OppCard = ({ opp, children }) =>
     <OppBookmark opp={opp} />
     <View style={styles.oppHeader}>
       <Image style={styles.oppAvatar} source={{ uri: opp.team.imgUrl }} />
-      <Text style={styles.oppTitle}>{opp.team.name} wants you for their next {opp.role}.</Text>
+      <Text style={styles.oppTitle}>{opp.team.title} wants you for their next {opp.role.title}.</Text>
     </View>
     <Text>{opp.description}</Text>
     <OppToolbar opp={opp} >
