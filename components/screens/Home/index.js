@@ -1,7 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { compose, mapProps, branch, renderNothing } from 'recompose';
 import { Text } from 'react-native';
+import { graphql } from 'react-apollo';
+import { gql } from 'apollo-boost';
 import ScreenView from '../../ScreenView';
 import OppList from '../../OppList';
 
@@ -13,10 +14,29 @@ let HomeScreen = ({ opps }) =>
     </OppList>
   </ScreenView>
 
-let mapStateToProps = ({ opps }) => ({ opps: opps.filter(({ bookmarked }) => bookmarked) });
+let query = gql`
+query {
+  opps(bookmarked: true) {
+    id
+    role {
+      title
+    }
+    team {
+      title
+      url
+      imgUrl
+    }
+    description
+  }
+}
+`;
+
+let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
-  connect(mapStateToProps, null)
+  graphql(query),
+  nothingWhileLoading(({ data: { loading } }) => loading),
+  mapProps(({ data, ...props }) => ({ ...data, ...props }))
 );
 
 export default enhance(HomeScreen);

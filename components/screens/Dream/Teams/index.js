@@ -1,18 +1,32 @@
 import React from 'react';
+import { compose, mapProps, branch, renderNothing } from 'recompose';
+import { graphql } from 'react-apollo';
+import { gql } from 'apollo-boost';
 import ScreenView from '../../../ScreenView';
 import TeamList from '../../../TeamList';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
 
 let TeamsScreen = ({ teams }) =>
   <ScreenView>
     <TeamList teams={teams} />
   </ScreenView>
 
-let mapStateToProps = ({ teams }) => ({ teams });
+let query = gql`
+query {
+  teams {
+    id
+    title
+    url
+    imgUrl
+  }
+}
+`;
+
+let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
-  connect(mapStateToProps)
+  graphql(query),
+  nothingWhileLoading(({ data: { loading } }) => loading),
+  mapProps(({ data, ...props }) => ({ ...data, ...props }))
 );
 
 export default enhance(TeamsScreen);

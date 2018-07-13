@@ -1,18 +1,30 @@
 import React from 'react';
+import { compose, mapProps, branch, renderNothing } from 'recompose';
+import { graphql } from 'react-apollo';
+import { gql } from 'apollo-boost';
 import ScreenView from '../../../ScreenView';
 import RoleList from '../../../RoleList';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
 
 let RolesScreen = ({ roles }) =>
   <ScreenView>
     <RoleList roles={roles} />
   </ScreenView>
 
-let mapStateToProps = ({ roles }) => ({ roles });
+let query = gql`
+query {
+  roles {
+    id
+    title
+  }
+}
+`;
+
+let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
-  connect(mapStateToProps)
+  graphql(query),
+  nothingWhileLoading(({ data: { loading } }) => loading),
+  mapProps(({ data, ...props }) => ({ ...data, ...props }))
 );
 
 export default enhance(RolesScreen);

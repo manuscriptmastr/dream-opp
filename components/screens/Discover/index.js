@@ -1,22 +1,42 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
+import { compose, mapProps, branch, renderNothing } from 'recompose';
 import { Text } from 'react-native';
+import { graphql } from 'react-apollo';
+import { gql } from 'apollo-boost';
 import ScreenView from '../../ScreenView';
 import OppList from '../../OppList';
 
 let DiscoverScreen = ({ opps }) =>
   <ScreenView>
-    <OppList opps={opps} > 
+    <OppList opps={opps} >
       <Text>Bookmark</Text>
       <Text>Hide</Text>
     </OppList>
   </ScreenView>
 
-let mapStateToProps = ({ opps }) => ({ opps });
+let query = gql`
+query {
+  opps(bookmarked: false) {
+    id
+    role {
+      title
+    }
+    team {
+      title
+      url
+      imgUrl
+    }
+    description
+  }
+}
+`;
+
+let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
-  connect(mapStateToProps, null)
+  graphql(query),
+  nothingWhileLoading(({ data: { loading } }) => loading),
+  mapProps(({ data, ...props }) => ({ ...data, ...props }))
 );
 
 export default enhance(DiscoverScreen);
