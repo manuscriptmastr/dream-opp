@@ -1,15 +1,15 @@
 import React from 'react';
 import Navigator from '../navigation/Navigator';
-import store from '../../store';
-import client from '../../store/api';
-import { Provider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
+import ApolloClient from 'apollo-boost';
+
+let client = new ApolloClient({
+  uri: "http://0.tcp.ngrok.io:12186/graphql"
+});
 
 let Store = () =>
   <ApolloProvider client={client} >
-    <Provider store={store} >
-      <Navigator />
-    </Provider>
+    <Navigator />
   </ApolloProvider>
 
 export default Store;
