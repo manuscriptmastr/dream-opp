@@ -16,7 +16,7 @@ let DiscoverScreen = ({ opps }) =>
 
 let query = gql`
 query {
-  opps(bookmarked: false) {
+  opps(input: { bookmarked: false }) {
     id
     role {
       title

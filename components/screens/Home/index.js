@@ -16,7 +16,7 @@ let HomeScreen = ({ opps }) =>
 
 let query = gql`
 query {
-  opps(bookmarked: true) {
+  opps(input: { bookmarked: true }) {
     id
     role {
       title
