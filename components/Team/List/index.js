@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import { ScrollView, View } from 'react-native';
-import TeamCard from '../TeamCard';
+import TeamCard from '../Card';
 
 let TeamList = ({ teams }) =>
   <ScrollView style={styles.teamList}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles';
 import { ScrollView, View } from 'react-native';
-import OppCard from '../OppCard';
+import OppCard from '../Card';
 
 let OppList = ({ opps, children }) =>
   <ScrollView style={styles.oppList} >

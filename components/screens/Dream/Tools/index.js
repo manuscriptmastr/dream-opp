@@ -3,7 +3,7 @@ import { compose, mapProps, branch, renderNothing } from 'recompose';
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import ScreenView from '../../../ScreenView';
-import ToolList from '../../../ToolList';
+import ToolList from '../../../Tool/List';
 
 let ToolsScreen = ({ tools }) =>
   <ScreenView>
