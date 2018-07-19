@@ -24,10 +24,10 @@ mutation UpdateRole($id: ID!, $input: RoleInput!) {
 `;
 
 let enhance = compose (
-  graphql(update),
+  graphql(update, { name: 'update' }),
   withHandlers({
-    updateRole: ({ mutate, role }) => (e) =>
-      mutate({ variables: { id: role.id, input: { title: e.nativeEvent.text }} })
+    updateRole: ({ update, role }) => (e) =>
+      update({ variables: { id: role.id, input: { title: e.nativeEvent.text }} })
   })
 );
 
