@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './styles';
-import { View, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 
 let RoleCard = ({ role }) =>
   <View style={styles.role}>
-    <Text style={styles.roleHeader}>{role.title}</Text>
+    <TextInput
+      style={styles.roleHeader}
+      returnKeyType="done"
+    >{role.title}</TextInput>
   </View>
 
 export default RoleCard;
