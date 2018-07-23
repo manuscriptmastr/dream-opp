@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigator from '../navigation/Navigator';
+import Navigator from '../Navigator';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
