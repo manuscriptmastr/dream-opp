@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-plugin-import-graphql": "^2.6.2",
     "jest-expo": "~27.0.0",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "start": "rm -rf ./node_modules/.cache/babel-loader && react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
@@ -22,6 +23,7 @@
     "apollo-boost": "^0.1.10",
     "expo": "^27.0.1",
     "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
     "react": "16.3.1",
     "react-apollo": "^2.1.9",
     "react-native": "~0.55.2",
