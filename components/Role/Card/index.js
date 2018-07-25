@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import { compose } from 'recompose';
 import { graphql } from 'react-apollo';
-import { UpdateRole, DestroyRole } from '../../../graphql/role.gql'
+import { ReadRoles, UpdateRole, DestroyRole } from '../../../graphql/role.gql'
 import { View, TextInput, Button } from 'react-native';
 
 let RoleCard = ({ role, updateRole, destroyRole }) =>
@@ -12,7 +12,7 @@ let RoleCard = ({ role, updateRole, destroyRole }) =>
       returnKeyType="done"
       onEndEditing={(e) => updateRole({ title: e.nativeEvent.text })}
     >{role.title}</TextInput>
-    {/* <Button title="Delete" onPress={destroyRole} /> */}
+    <Button title="Delete" onPress={() => destroyRole()} />
   </View>
 
 let enhance = compose (
@@ -27,24 +27,17 @@ let enhance = compose (
       })
     })
   }),
-  // graphql(DestroyRole, {
-  //   name: 'destroyRole'
-  // }),
-  // withHandlers({
-  //   updateRole: ({ update, role: { id } }) => (e) =>
-  //     update({
-  //       variables: {
-  //         id,
-  //         input: {
-  //           title: e.nativeEvent.text
-  //         }
-  //       }
-  //     }),
-  //   destroyRole: ({ destroy, role: { id }, client }) => () => {
-  //     destroy({ variables: { id } });
-  //     client.resetStore();
-  //   }
-  // })
+  graphql(DestroyRole, {
+    name: 'destroyRole',
+    options: ({ role: { id }, updateQuery }) => ({
+      variables: { id },
+      update: () =>
+        updateQuery((prev) => ({
+          ...prev, roles: prev.roles.filter(role => role.id !== id)
+        })
+      )
+    })
+  })
 );
 
 export default enhance(RoleCard);
