@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles';
 import { compose } from 'recompose';
 import { graphql } from 'react-apollo';
-import { ReadRoles, UpdateRole, DestroyRole } from '../../../graphql/role.gql'
+import { UpdateRole, DestroyRole } from '../../../graphql/role.gql'
 import { View, TextInput, Button } from 'react-native';
 
 let RoleCard = ({ role, updateRole, destroyRole }) =>
@@ -29,10 +29,10 @@ let enhance = compose (
   }),
   graphql(DestroyRole, {
     name: 'destroyRole',
-    options: ({ role: { id }, updateQuery }) => ({
+    options: ({ role: { id }, updateRoles }) => ({
       variables: { id },
       update: () =>
-        updateQuery((prev) => ({
+        updateRoles((prev) => ({
           ...prev, roles: prev.roles.filter(role => role.id !== id)
         })
       )

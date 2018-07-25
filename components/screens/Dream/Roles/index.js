@@ -7,32 +7,32 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ScreenView from '../../../ScreenView';
 import RoleList from '../../../Role/List';
 
-let RolesScreen = ({ roles, createRole, updateQuery }) =>
+let RolesScreen = ({ roles, createRole, updateRoles }) =>
   <ScreenView>
     <TouchableOpacity onPress={() => createRole()}>
       <Ionicons name="ios-add" size={25} color="blue" />
     </TouchableOpacity>
-    <RoleList roles={roles} updateQuery={updateQuery} />
+    <RoleList roles={roles} updateRoles={updateRoles} />
   </ScreenView>
 
 let nothingWhileLoading = (isLoading) => branch(isLoading, renderNothing);
 
 let enhance = compose(
   graphql(ReadRoles, {
-    props: ({ data: { loading, roles, updateQuery } }) => ({
-      loading, roles, updateQuery
+    props: ({ data: { loading, roles, updateQuery: updateRoles } }) => ({
+      loading, roles, updateRoles
     })
   }),
   graphql(CreateRole, {
     name: 'createRole',
-    options: ({ updateQuery }) => ({
+    options: ({ updateRoles }) => ({
       variables: {
         input: {
           title: "Press to edit"
         }
       },
       update: (_, { data: { createRole } }) =>
-        updateQuery((prev) => ({
+        updateRoles((prev) => ({
           ...prev, roles: [ ...prev.roles, createRole ]
         })
       )
