@@ -1,7 +1,7 @@
 mutation CreateTool($input: ToolInput!) {
   createTool(input: $input) {
-    title
     id
+    title
   }
 }
 
@@ -14,14 +14,14 @@ query ReadTools {
 
 mutation UpdateTool($id: ID!, $input: ToolInput!) {
   updateTool(id: $id, input: $input) {
-    title
     id
+    title
   }
 }
 
 mutation DestroyTool($id: ID!) {
   destroyTool(id: $id) {
-    title
     id
+    title
   }
 }
