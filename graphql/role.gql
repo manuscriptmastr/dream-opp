@@ -1,7 +1,7 @@
 mutation CreateRole($input: RoleInput!) {
   createRole(input: $input) {
-    title
     id
+    title
   }
 }
 
@@ -14,14 +14,14 @@ query ReadRoles {
 
 mutation UpdateRole($id: ID!, $input: RoleInput!) {
   updateRole(id: $id, input: $input) {
-    title
     id
+    title
   }
 }
 
 mutation DestroyRole($id: ID!) {
   destroyRole(id: $id) {
-    title
     id
+    title
   }
 }
