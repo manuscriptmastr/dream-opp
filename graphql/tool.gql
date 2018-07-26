@@ -1,0 +1,27 @@
+mutation CreateTool($input: ToolInput!) {
+  createTool(input: $input) {
+    title
+    id
+  }
+}
+
+query ReadTools {
+  tools {
+    id
+    title
+  }
+}
+
+mutation UpdateTool($id: ID!, $input: ToolInput!) {
+  updateTool(id: $id, input: $input) {
+    title
+    id
+  }
+}
+
+mutation DestroyTool($id: ID!) {
+  destroyTool(id: $id) {
+    title
+    id
+  }
+}
