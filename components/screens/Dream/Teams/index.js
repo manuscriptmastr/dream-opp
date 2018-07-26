@@ -3,7 +3,7 @@ import { compose, mapProps, branch, renderNothing } from 'recompose';
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import ScreenView from '../../../ScreenView';
-import TeamList from '../../../TeamList';
+import TeamList from '../../../Team/List';
 
 let TeamsScreen = ({ teams }) =>
   <ScreenView>

@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import { graphql } from 'react-apollo';
 import { gql } from 'apollo-boost';
 import ScreenView from '../../ScreenView';
-import OppList from '../../OppList';
+import OppList from '../../Opp/List';
 
 let HomeScreen = ({ opps }) =>
   <ScreenView>
@@ -16,7 +16,7 @@ let HomeScreen = ({ opps }) =>
 
 let query = gql`
 query {
-  opps(bookmarked: true) {
+  opps(input: { bookmarked: true }) {
     id
     role {
       title

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './styles';
 import { View, Text, Image } from 'react-native';
-import OppBookmark from '../OppBookmark';
-import OppToolbar from '../OppToolbar';
+import OppBookmark from '../Bookmark';
+import OppToolbar from '../Toolbar';
 
 let OppCard = ({ opp, children }) =>
   <View style={styles.opp} >

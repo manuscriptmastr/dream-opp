@@ -1,0 +1,27 @@
+mutation CreateRole($input: RoleInput!) {
+  createRole(input: $input) {
+    title
+    id
+  }
+}
+
+query ReadRoles {
+  roles {
+    id
+    title
+  }
+}
+
+mutation UpdateRole($id: ID!, $input: RoleInput!) {
+  updateRole(id: $id, input: $input) {
+    title
+    id
+  }
+}
+
+mutation DestroyRole($id: ID!) {
+  destroyRole(id: $id) {
+    title
+    id
+  }
+}
