@@ -21,3 +21,11 @@ See only roles that match your dream.
 Make intention your game.
 - Schedule reminders for your curated roles.
 - See what skills you need to level up for roles.
+
+## Technologies
+- React Native
+- GraphQL
+- React Navigation
+- Apollo Client
+- Recompose
+- [Koa/GraphQL/Sequelize API](https://github.com/manuscriptmastr/dream-opp-backend)
