@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './styles';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import TeamCard from '../Card';
 
 let TeamList = ({ teams, updateTeams }) =>
-  <ScrollView style={styles.teamList}>
+  <KeyboardAwareScrollView style={styles.teamList}>
     {teams.map(team =>
       <View key={team.id} style={styles.teamListItem} >
         <TeamCard team={team} updateTeams={updateTeams} />
       </View>
     )}
-  </ScrollView>
+  </KeyboardAwareScrollView>
 
 export default TeamList;
