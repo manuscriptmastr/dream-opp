@@ -22,7 +22,7 @@ Make intention your game.
 - Schedule reminders for your curated roles.
 - See what skills you need to level up for roles.
 
-## Technologies
+## DreamStack
 - React Native
 - GraphQL
 - React Navigation
