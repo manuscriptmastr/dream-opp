@@ -1,27 +1,28 @@
+fragment ToolFragment on Tool {
+  id
+  title
+}
+
 mutation CreateTool($input: ToolInput!) {
   createTool(input: $input) {
-    id
-    title
+    ...ToolFragment
   }
 }
 
 query ReadTools {
   tools {
-    id
-    title
+    ...ToolFragment
   }
 }
 
 mutation UpdateTool($id: ID!, $input: ToolInput!) {
   updateTool(id: $id, input: $input) {
-    id
-    title
+    ...ToolFragment
   }
 }
 
 mutation DestroyTool($id: ID!) {
   destroyTool(id: $id) {
-    id
-    title
+    ...ToolFragment
   }
 }

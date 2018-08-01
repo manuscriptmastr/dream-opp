@@ -1,27 +1,28 @@
+fragment RoleFragment on Role {
+  id
+  title
+}
+
 mutation CreateRole($input: RoleInput!) {
   createRole(input: $input) {
-    id
-    title
+    ...RoleFragment
   }
 }
 
 query ReadRoles {
   roles {
-    id
-    title
+    ...RoleFragment
   }
 }
 
 mutation UpdateRole($id: ID!, $input: RoleInput!) {
   updateRole(id: $id, input: $input) {
-    id
-    title
+    ...RoleFragment
   }
 }
 
 mutation DestroyRole($id: ID!) {
   destroyRole(id: $id) {
-    id
-    title
+    ...RoleFragment
   }
 }
