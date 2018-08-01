@@ -1,7 +1,4 @@
-fragment ToolFragment on Tool {
-  id
-  title
-}
+#import './fragment.gql'
 
 mutation CreateTool($input: ToolInput!) {
   createTool(input: $input) {

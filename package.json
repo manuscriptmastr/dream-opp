@@ -10,7 +10,7 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "rm -rf ./node_modules/.cache/babel-loader && react-native-scripts start",
+    "start": "rm -rf ./node_modules/.cache/babel-loader && react-native-scripts start --reset-cache",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",

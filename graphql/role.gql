@@ -1,7 +1,4 @@
-fragment RoleFragment on Role {
-  id
-  title
-}
+#import './fragment.gql'
 
 mutation CreateRole($input: RoleInput!) {
   createRole(input: $input) {

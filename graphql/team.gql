@@ -1,9 +1,4 @@
-fragment TeamFragment on Team {
-  id
-  title
-  url
-  imgUrl
-}
+#import './fragment.gql'
 
 mutation CreateTeam($input: TeamInput!) {
   createTeam(input: $input) {

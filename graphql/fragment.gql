@@ -1,0 +1,27 @@
+fragment RoleFragment on Role {
+  id
+  title
+}
+
+fragment TeamFragment on Team {
+  id
+  title
+  url
+  imgUrl
+}
+
+fragment ToolFragment on Tool {
+  id
+  title
+}
+
+fragment OppFragment on Opp {
+  id
+  description
+  role {
+    ...RoleFragment
+  }
+  team {
+    ...TeamFragment
+  }
+}
