@@ -3,8 +3,11 @@ import Navigator from '../Navigator';
 import { ApolloProvider } from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
+import config from '../../config.json';
+const { API_URL } = config;
+
 let client = new ApolloClient({
-  uri: "http://0.tcp.ngrok.io:15632/graphql"
+  uri: `${API_URL}/graphql`
 });
 
 let Store = () =>
